@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://cugnwegmdac76"]
+
+[ext_resource type="Theme" uid="uid://cnejaint1aac8" path="res://assets/themes/theme_default.tres" id="1_nfce0"]
+[ext_resource type="Script" uid="uid://dp1wr6vwqewli" path="res://components/ui/options_menu.gd" id="1_o733n"]
+
+[node name="OptionsMenu" type="VBoxContainer"]
+theme = ExtResource("1_nfce0")
+script = ExtResource("1_o733n")
+
+[node name="FullscreenToggle" type="CheckButton" parent="."]
+layout_mode = 2
+text = "Fullscreen"
+
+[node name="AudioContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 6
+
+[node name="AudioLabel" type="Label" parent="AudioContainer"]
+layout_mode = 2
+text = "Audio volume"
+
+[node name="AudioSlider" type="HSlider" parent="."]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+max_value = 1.0
+step = 0.02

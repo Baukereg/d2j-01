@@ -1,0 +1,44 @@
+[gd_scene load_steps=3 format=3 uid="uid://ye65w3k24qs5"]
+
+[ext_resource type="Script" uid="uid://yxpxf4fbrg2y" path="res://components/ui/pause_menu.gd" id="1_bevw5"]
+[ext_resource type="Theme" uid="uid://cnejaint1aac8" path="res://assets/themes/theme_default.tres" id="2_qwf3i"]
+
+[node name="PauseMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bevw5")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.313726)
+
+[node name="ModalContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Menu" type="VBoxContainer" parent="ModalContainer"]
+layout_mode = 2
+theme = ExtResource("2_qwf3i")
+
+[node name="ContinueButton" type="Button" parent="ModalContainer/Menu"]
+layout_mode = 2
+text = "Continue"
+
+[node name="QuitButton" type="Button" parent="ModalContainer/Menu"]
+layout_mode = 2
+text = "Quit"
