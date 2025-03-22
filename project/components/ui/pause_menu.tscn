@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://ye65w3k24qs5"]
+[gd_scene load_steps=4 format=3 uid="uid://ye65w3k24qs5"]
 
 [ext_resource type="Script" uid="uid://yxpxf4fbrg2y" path="res://components/ui/pause_menu.gd" id="1_bevw5"]
 [ext_resource type="Theme" uid="uid://cnejaint1aac8" path="res://assets/themes/theme_default.tres" id="2_qwf3i"]
+[ext_resource type="PackedScene" uid="uid://cugnwegmdac76" path="res://components/ui/options_menu.tscn" id="3_damoi"]
 
 [node name="PauseMenu" type="Control"]
 layout_mode = 3
@@ -21,7 +22,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 0.313726)
+color = Color(1, 1, 1, 0.705882)
 
 [node name="ModalContainer" type="CenterContainer" parent="."]
 layout_mode = 1
@@ -30,6 +31,11 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="ModalContainer"]
+custom_minimum_size = Vector2(280, 360)
+layout_mode = 2
+color = Color(0.244776, 0.244776, 0.244776, 1)
 
 [node name="Menu" type="VBoxContainer" parent="ModalContainer"]
 layout_mode = 2
@@ -42,3 +48,10 @@ text = "Continue"
 [node name="QuitButton" type="Button" parent="ModalContainer/Menu"]
 layout_mode = 2
 text = "Quit"
+
+[node name="HSeparator" type="HSeparator" parent="ModalContainer/Menu"]
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="OptionsMenu" parent="ModalContainer/Menu" instance=ExtResource("3_damoi")]
+layout_mode = 2

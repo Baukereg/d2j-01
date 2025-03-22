@@ -1,17 +1,49 @@
-[gd_scene load_steps=4 format=3 uid="uid://cx4u5wdqly06j"]
+[gd_scene load_steps=5 format=3 uid="uid://cx4u5wdqly06j"]
 
 [ext_resource type="Script" uid="uid://co5b1beqyue6m" path="res://scenes/game.gd" id="1_uwrxv"]
-[ext_resource type="Theme" uid="uid://cnejaint1aac8" path="res://assets/themes/theme_default.tres" id="2_lnu2h"]
+[ext_resource type="PackedScene" uid="uid://bbm8rdurc11qy" path="res://components/game/pitch/pitch.tscn" id="2_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://ye65w3k24qs5" path="res://components/ui/pause_menu.tscn" id="2_yqjtg"]
+[ext_resource type="PackedScene" uid="uid://byhhdljyrcf0k" path="res://components/ui/player_highlight.tscn" id="4_lbhrr"]
 
-[node name="Game" type="Node2D"]
+[node name="Game" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_uwrxv")
 
-[node name="ScoreLabel" type="Label" parent="."]
-offset_right = 40.0
-offset_bottom = 23.0
-theme = ExtResource("2_lnu2h")
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PitchContrainer" type="Control" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="Pitch" parent="CenterContainer/PitchContrainer" instance=ExtResource("2_lnu2h")]
+position = Vector2(-640, -360)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
+[node name="PlayerHighlightA" parent="CanvasLayer" instance=ExtResource("4_lbhrr")]
+visible = false
+offset_left = 230.0
+offset_top = 534.0
+offset_right = 270.0
+offset_bottom = 574.0
+
+[node name="PlayerHighlightB" parent="CanvasLayer" instance=ExtResource("4_lbhrr")]
+visible = false
+offset_left = 697.0
+offset_top = 55.0
+offset_right = 737.0
+offset_bottom = 95.0
+mirrored = true
+
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("2_yqjtg")]
+visible = false

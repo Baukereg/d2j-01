@@ -24,6 +24,7 @@ MouseManager="*res://static/mouse_manager.gd"
 MusicPlayer="*res://static/music_player.gd"
 SessionManager="*res://static/session_manager.gd"
 Settings="*res://static/settings.gd"
+PlayerGenerator="*res://components/game/player/player_generator.gd"
 
 [display]
 

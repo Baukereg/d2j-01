@@ -1,0 +1,48 @@
+[gd_scene load_steps=5 format=3 uid="uid://bbm8rdurc11qy"]
+
+[ext_resource type="Script" uid="uid://cdydtu4vystmc" path="res://components/game/pitch/pitch.gd" id="1_mb34d"]
+[ext_resource type="Texture2D" uid="uid://bu7wq2lcpmhwc" path="res://assets/sprites/game/pitch.png" id="2_ub0cn"]
+
+[sub_resource type="Curve2D" id="Curve2D_ub0cn"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 250, 222, 0, 0, 0, 0, 458, 291)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_6j8l6"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 236, 440, 0, 0, 0, 0, 647, 230)
+}
+point_count = 2
+
+[node name="Pitch" type="Node2D"]
+script = ExtResource("1_mb34d")
+
+[node name="Pitch" type="Sprite2D" parent="."]
+position = Vector2(640, 365)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_ub0cn")
+
+[node name="GoalA" type="Path2D" parent="."]
+position = Vector2(3, -38)
+curve = SubResource("Curve2D_ub0cn")
+
+[node name="HalfA_A" type="Path2D" parent="."]
+position = Vector2(19, -20)
+curve = SubResource("Curve2D_6j8l6")
+
+[node name="HalfA_B" type="Path2D" parent="."]
+position = Vector2(180, -12)
+curve = SubResource("Curve2D_6j8l6")
+
+[node name="HalfB_A" type="Path2D" parent="."]
+position = Vector2(221, 72)
+curve = SubResource("Curve2D_6j8l6")
+
+[node name="HalfB_B" type="Path2D" parent="."]
+position = Vector2(374, 84)
+curve = SubResource("Curve2D_6j8l6")
+
+[node name="GoalB" type="Path2D" parent="."]
+position = Vector2(556, 262)
+curve = SubResource("Curve2D_ub0cn")

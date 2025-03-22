@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://byhhdljyrcf0k"]
+
+[ext_resource type="Script" uid="uid://c54gb5mxpryfg" path="res://components/ui/player_highlight.gd" id="1_cdti6"]
+[ext_resource type="Theme" uid="uid://cnejaint1aac8" path="res://assets/themes/theme_default.tres" id="1_kfd20"]
+
+[node name="PlayerHighlight" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme = ExtResource("1_kfd20")
+script = ExtResource("1_cdti6")
+
+[node name="Visual" type="Polygon2D" parent="."]
+position = Vector2(-80, 35)
+color = Color(0.772549, 0.458824, 0.458824, 1)
+polygon = PackedVector2Array(-67, 95, -71, 133, -98, 129, -88, 64, -129, 91, -144, 69, -94, 41, -93, 23, -143, 6, -120, -205, 65, -208, 69, 12, -19, 23, -19, 37, 17, 63, 6, 84, -33, 59, -18, 135, -50, 135, -53, 87)
+
+[node name="VisualMirrored" type="Polygon2D" parent="."]
+position = Vector2(448, 152)
+scale = Vector2(-1, 1)
+color = Color(0.772549, 0.458824, 0.458824, 1)
+polygon = PackedVector2Array(-67, 95, -71, 133, -98, 129, -88, 64, -129, 91, -144, 69, -94, 41, -93, 23, -143, 6, -120, -205, 65, -208, 69, 12, -19, 23, -19, 37, 17, 63, 6, 84, -33, 59, -18, 135, -50, 135, -53, 87)
+
+[node name="InfoLabel" type="RichTextLabel" parent="."]
+custom_minimum_size = Vector2(360, 0)
+layout_mode = 2
+offset_right = 360.0
+offset_bottom = 23.0
+mouse_filter = 2
+bbcode_enabled = true
+text = "STATS"
+fit_content = true

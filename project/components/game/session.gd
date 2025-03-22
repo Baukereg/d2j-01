@@ -2,4 +2,5 @@ extends Resource
 class_name Session
 
 
-@export var score:int = 0
+@export var team:TeamResource
+@export var next_opponent:TeamResource

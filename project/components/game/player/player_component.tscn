@@ -1,0 +1,43 @@
+[gd_scene load_steps=4 format=3 uid="uid://rmm2guweoj7p"]
+
+[ext_resource type="Script" uid="uid://csdin7f388r45" path="res://components/game/player/player_component.gd" id="1_yhhbm"]
+[ext_resource type="Texture2D" uid="uid://fymdl0drd4g5" path="res://assets/sprites/game/ball.png" id="3_3m6e8"]
+[ext_resource type="Theme" uid="uid://cnejaint1aac8" path="res://assets/themes/theme_default.tres" id="3_wtmey"]
+
+[node name="PlayerComponent" type="PathFollow2D"]
+rotates = false
+loop = false
+script = ExtResource("1_yhhbm")
+
+[node name="Visual" type="Polygon2D" parent="."]
+scale = Vector2(0.28, 0.28)
+color = Color(0.772549, 0.458824, 0.458824, 1)
+offset = Vector2(46, -120)
+polygon = PackedVector2Array(-67, 95, -71, 133, -98, 129, -88, 64, -129, 91, -144, 69, -94, 41, -93, 23, -143, 6, -120, -205, 65, -208, 69, 12, -19, 23, -19, 37, 17, 63, 6, 84, -33, 59, -18, 135, -50, 135, -53, 87)
+
+[node name="Ball" type="Sprite2D" parent="Visual"]
+position = Vector2(89.2857, -53.5714)
+scale = Vector2(0.285993, 0.285993)
+texture = ExtResource("3_3m6e8")
+
+[node name="NameLabel" type="RichTextLabel" parent="."]
+offset_left = -80.0
+offset_top = -118.0
+offset_right = 80.0
+offset_bottom = -90.0
+mouse_filter = 2
+theme = ExtResource("3_wtmey")
+theme_override_constants/outline_size = 6
+bbcode_enabled = true
+text = "[center]NAME[/center]"
+fit_content = true
+scroll_active = false
+
+[node name="Button" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(96, 96)
+offset_left = -48.0
+offset_top = -88.0
+offset_right = 48.0
+offset_bottom = 8.0
+metadata/_edit_lock_ = true
